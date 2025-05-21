@@ -1,52 +1,21 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
 
-# Linker output
-*.ilk
-*.map
-*.exp
+int main() {
+    int num;
+    printf("Bir sayÄ± girin: ");
+    scanf("%d", &num);
 
-# Precompiled Headers
-*.gch
-*.pch
+    if (num < 0)
+        printf("Negatif sayÄ±larÄ±n faktÃ¶riyeli hesaplanamaz.\n");
+    else
+        printf("%d sayÄ±sÄ±nÄ±n faktÃ¶riyeli: %d\n", num, factorial(num));
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    return 0;
+}
